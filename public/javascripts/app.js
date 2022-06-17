@@ -55,7 +55,7 @@ socket.on("move", (data) => {
 
   if (game.result != "0") {
     myMove = false;
-    alert(`${game.result} Wins the game`);
+    alert(game.result === "Tie" ? "Its a tie" : `${game.result} Wins the game`);
     document.location.replace("/");
   }
 

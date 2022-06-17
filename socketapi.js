@@ -52,6 +52,7 @@ const checkBoard = (board) => {
     return board[0];
   if (board[2] === board[4] && board[2] === board[6] && board[2] !== "0")
     return board[2];
+  if (board.filter((t) => t === "0").length === 0) return "Tie";
   return 0;
 };
 
