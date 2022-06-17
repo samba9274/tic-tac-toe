@@ -10,43 +10,58 @@
 
   <body style="background-color: limegreen">
     <div class="container my-5">
-      <div class="row mb-5">
-        <div class="col offset-4">
-          <div class="row mb-3">
-            <button class="btn btn-primary" onclick="create()">Create</button>
+      <div class="row mb-3">
+        <div class="d-none d-lg-block col"></div>
+        <div class="col row">
+          <button class="btn btn-primary" onclick="create()">Create</button>
+        </div>
+        <div class="d-none d-lg-block col"></div>
+      </div>
+      <div class="row mb-3">
+        <div class="d-none d-lg-block col"></div>
+        <div class="col row">
+          <button class="btn btn-outline-secondary" id="CopyLink" disabled>
+            Click here to copy game link
+          </button>
+        </div>
+        <div class="d-none d-lg-block col"></div>
+      </div>
+      <div class="row mb-3">
+        <div class="col row">
+          <div class="col">
+            <input
+              class="form-control"
+              type="text"
+              disabled
+              value="Player"
+              id="EditUsernameText"
+            />
           </div>
-          <div class="row col">
-            <button class="btn btn-outline-secondary" id="CopyLink" disabled>
-              Click here to copy game link
+          <div class="col-1">
+            <button
+              class="btn btn-outline-primary"
+              id="EditUsernameButton"
+              onclick="editUsername()"
+            >
+              ✎
             </button>
           </div>
         </div>
+        <div class="col"></div>
         <div class="col">
-          <div class="row float-end">
-            <div class="col">
-              <input
-                class="form-control"
-                type="text"
-                disabled
-                value="Player"
-                id="EditUsernameText"
-              />
-            </div>
-            <div class="col-1">
-              <button
-                class="btn btn-outline-primary"
-                id="EditUsernameButton"
-                onclick="editUsername()"
-              >
-                ✎
-              </button>
-            </div>
+          <div
+            class="rounded-3 px-4 py-3"
+            style="background-color: rgba(255, 255, 255, 0.5)"
+          >
+            <div class="fs-4" id="xPlayer">X :</div>
+            <div class="fs-4" id="oPlayer">O :</div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-6 offset-3">
+      <div class="row mt-5 mt-lg-0">
+        <div class="col"></div>
+        <div class="col-12 col-lg-6">
           <div class="row">
             <div
               class="col ratio btn border-0 border-3 border-dark ratio-1x1 border-end border-bottom box boxEnabled"
@@ -101,22 +116,11 @@
             ></div>
           </div>
         </div>
-
-        <div class="col-3 py-5">
-          <div
-            class="rounded-3 my-auto my-5 px-4 py-3"
-            style="background-color: rgba(255, 255, 255, 0.5)"
-          >
-            <div class="fs-3" id="xPlayer">X :</div>
-            <div class="fs-3" id="oPlayer">O :</div>
-          </div>
-        </div>
+        <div class="col"></div>
       </div>
     </div>
-
-    <div id="Board"></div>
-    <script src="https://cdn.socket.io/4.5.1/socket.io.esm.min.js"></script>
-    <script src="javascripts/app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="javascripts/app.js"></script>
   </body>
 </html>
